@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StockSteer — See both channels. Steer your stock where it earns more.</title>
+<meta name="description" content="StockSteer reads your Shopify and Amazon numbers together and tells you which channel should get how many units — with the math shown. Upload one sales CSV, get a free allocation diagnosis.">
+<link rel="canonical" href="https://stocksteer.maxvideohub.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="StockSteer">
+<meta property="og:url" content="https://stocksteer.maxvideohub.com/">
+<meta property="og:title" content="StockSteer — See both channels. Steer your stock where it earns more.">
+<meta property="og:description" content="Reads your Shopify and Amazon numbers together and tells you which channel should get how many units — with the math shown. One sales CSV in, a free allocation diagnosis back within 48 hours.">
+<meta property="og:image" content="https://stocksteer.maxvideohub.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A StockSteer allocation diagnosis: send 240 units of CARA-BLK to FBA by Aug 22 — Shopify at 64 days of cover, Amazon FBA at 9.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg width=%2264%22 height=%2264%22 viewBox=%220 0 64 64%22 fill=%22none%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%230C333C%22/%3E%3Cg transform=%22translate%288 8%29%22%3E%3Cpath d=%22M11 4L29 4L29 14L14 14L14 19L37 19A7 7 0 0 1 44 26L44 37A7 7 0 0 1 37 44L4 44L4 34L34 34L34 29L11 29A7 7 0 0 1 4 22L4 11A7 7 0 0 1 11 4Z%22 fill=%22%23F3F8F9%22/%3E%3Crect x=%2234%22 y=%224%22 width=%2210%22 height=%2210%22 fill=%22%23D08440%22 transform=%22rotate%28-6 39 9%29%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="wordmark" href="/">
+      <svg width="22" height="22" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M11 4L29 4L29 14L14 14L14 19L37 19A7 7 0 0 1 44 26L44 37A7 7 0 0 1 37 44L4 44L4 34L34 34L34 29L11 29A7 7 0 0 1 4 22L4 11A7 7 0 0 1 11 4Z" fill="oklch(0.44 0.075 200)"/><rect x="34" y="4" width="10" height="10" fill="oklch(0.50 0.115 55)" transform="rotate(-6 39 9)"/></svg>
+      StockSteer
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#diagnosis">The diagnosis</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn" href="#get-diagnosis"><span class="cta-long">Get your free diagnosis</span><span class="cta-short">Free diagnosis</span></a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <h1 id="hero-title">Your stock sells on two channels. Your planning tool sees one.</h1>
+        <p class="lede">StockSteer reads Shopify and Amazon <strong>together</strong> and answers the question single-channel tools can't: <strong>which channel should get this stock, and how many units</strong> — with the math shown, every time.</p>
+        <div class="hero-cta">
+          <a class="btn btn-on-deep" href="#get-diagnosis">Get a free allocation diagnosis</a>
+        </div>
+        <p class="hero-trust">One sales CSV in → diagnosis in your inbox within 48 hours.<br>No account. No OAuth. Read-only — we never touch your listings.</p>
+      </div>
+
+      <!-- Diagnosis specimen: the actual deliverable, shown -->
+      <div class="specimen" id="specimen" aria-label="Sample allocation diagnosis">
+        <div class="specimen-head">
+          <span class="title">Allocation diagnosis</span>
+          <span class="meta mono">Acme Outdoor Co. · Aug 14</span>
+        </div>
+
+        <article class="action-card">
+          <span class="card-label">MOVE STOCK</span>
+          <h3>Send <span class="mono">240</span> units of <span class="sku">CARA-BLK</span> to FBA by Aug 22</h3>
+          <div class="cover-row">
+            <span class="chan">Shopify</span>
+            <span class="bar"><i style="width:92%"></i></span>
+            <span class="days">64 d cover</span>
+          </div>
+          <div class="cover-row">
+            <span class="chan">Amazon FBA</span>
+            <span class="bar"><i class="low" style="width:14%"></i></span>
+            <span class="days">9 d cover</span>
+          </div>
+          <details class="why" open>
+            <summary>Why 240 units?</summary>
+            <div class="math">
+              FBA velocity <b>25.6 u/day</b> × 21-day target = <b>538</b> needed<br>
+              − 230 on hand − 68 inbound = <b>240 to send</b><br>
+              margin after FBA fees <b>$11.40/u</b> vs Shopify <b>$9.10/u</b>
+            </div>
+          </details>
+        </article>
+
+        <article class="action-card">
+          <span class="card-label risk">OVERSELL RISK</span>
+          <h3><span class="sku">TENT-2P</span> can oversell in <span class="mono">8</span> days</h3>
+          <p class="risk-note">Shopify and Amazon FBM are selling the <b>same 88 units</b>. Combined velocity 11.2 u/day — first channel to spike breaks the other.</p>
+        </article>
+
+        <div class="specimen-foot">
+          <span>142 SKUs analyzed</span>
+          <span>3 actions</span>
+          <span>1 risk</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's in the diagnosis -->
+  <section id="diagnosis" aria-labelledby="diagnosis-title">
+    <div class="wrap">
+      <h2 class="section-title reveal" id="diagnosis-title">What the diagnosis tells you</h2>
+      <p class="section-intro reveal">Not a dashboard. A short, human-checked report with the handful of calls that actually move margin this month.</p>
+
+      <div class="contents-list">
+        <div class="content-row reveal">
+          <h3>Channel-by-channel coverage</h3>
+          <div>
+            <p>Every SKU's sales velocity and days of cover, split by channel — numbers that rarely get put side by side. The imbalances are usually immediate and expensive.</p>
+            <span class="example">CARA-BLK&nbsp;&nbsp;Shopify 64d&nbsp;·&nbsp;FBA 9d&nbsp;·&nbsp;imbalance 7.1×</span>
+          </div>
+        </div>
+        <div class="content-row reveal">
+          <h3>Where to move stock, and how much</h3>
+          <div>
+            <p>Concrete transfer calls — “send N units to FBA by this date” — weighted by velocity <em>and</em> margin after each channel's fees. Every number expands into its arithmetic. If you disagree with an input, you can see exactly which one.</p>
+          </div>
+        </div>
+        <div class="content-row reveal">
+          <h3>Oversell and stockout warnings</h3>
+          <div>
+            <p>Where Shopify and Amazon FBM are quietly selling the same pool of units, and the projected date each channel goes dark if nothing changes.</p>
+            <span class="example">TENT-2P&nbsp;&nbsp;shared pool 88u&nbsp;·&nbsp;oversell ETA 8 days</span>
+          </div>
+        </div>
+        <div class="content-row reveal">
+          <h3>What we won't tell you</h3>
+          <div>
+            <p>If your history is too thin to support a recommendation (under ~90 days on a channel), the report says so and explains what it <em>can</em> support instead. We'd rather decline than pad thin data into confident advice.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <h2 class="section-title reveal" id="how-title">How it works</h2>
+
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step-num" aria-hidden="true">1</span>
+          <div>
+            <h3>Export and upload your sales history</h3>
+            <p>A Shopify order export, an Amazon order or FBA report — or both. Twelve months is ideal; ninety days is the floor. One channel is fine to start.</p>
+            <p class="fine"><b>Strip the buyer columns before uploading.</b> We don't want names, addresses, or emails — the diagnosis only needs SKUs, dates, quantities, and prices.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="step-num" aria-hidden="true">2</span>
+          <div>
+            <h3>We run the allocation math</h3>
+            <p>Per-SKU velocity by channel, days of cover, margin after channel fees, shared-pool exposure. A human checks every report before it leaves — this is a diagnosis, not an auto-generated PDF.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="step-num" aria-hidden="true">3</span>
+          <div>
+            <h3>Diagnosis lands in your inbox within 48 hours</h3>
+            <p>Two kinds of calls — move stock, and risk warnings — each with its arithmetic shown. What you do with them stays entirely in your hands: StockSteer never writes to your stores.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The argument -->
+  <section class="argument" aria-labelledby="argument-title">
+    <div class="wrap">
+      <h2 class="section-title reveal" id="argument-title">Why a one-channel view keeps costing you</h2>
+      <p class="reveal">Inventory tools built for Shopify treat Amazon as something to sync in later, if at all. But the same unit can't be in two places: every carton you keep at your 3PL is a carton FBA can't sell, and every unit you send to Amazon stops covering your DTC orders.</p>
+      <p class="reveal">That trade-off has a price on both sides — different fees, different velocity, different margin per unit. Single-channel tools can't see it, so the decision gets made by habit: whoever shouted about stockouts last.</p>
+      <p class="kicker-line reveal">Allocation is a margin decision, not a sync problem.</p>
+    </div>
+  </section>
+
+  <!-- Promises -->
+  <section class="promises" aria-label="Data promises">
+    <div class="wrap">
+      <div class="promise-strip reveal">
+        <div class="promise">
+          <h3>Read-only, forever</h3>
+          <p>StockSteer recommends; it never edits listings, quantities, or orders. Not now, not in the product.</p>
+        </div>
+        <div class="promise">
+          <h3>No buyer data wanted</h3>
+          <p>We ask you to strip customer columns before uploading. If any slip through, we delete them.</p>
+        </div>
+        <div class="promise">
+          <h3>Your file, your call</h3>
+          <p>Used only to produce your diagnosis, deleted on request. Never sold, never used to train models without your consent. <a href="privacy.html">Privacy Policy</a></p>
+        </div>
+        <div class="promise">
+          <h3>Free means free</h3>
+          <p>The diagnosis costs nothing and obligates nothing. If it's useful, we'll talk about what comes next. <a href="terms.html">Terms</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" aria-labelledby="pricing-title">
+    <div class="wrap">
+      <h2 class="section-title reveal" id="pricing-title">What it costs</h2>
+      <p class="section-intro reveal">The rule is simple: reading your numbers is free, acting on them is paid.</p>
+
+      <div class="contents-list">
+        <div class="content-row reveal">
+          <h3>Allocation diagnosis <span class="price-tag">Free</span></h3>
+          <div>
+            <p>The one-off report described above. No card, no account, no obligation — during our pre-launch period this is how we learn and how you evaluate us.</p>
+          </div>
+        </div>
+        <div class="content-row reveal">
+          <h3>Diagnostics &amp; alerts <span class="price-tag">Free at launch</span></h3>
+          <div>
+            <p>When the product launches: channel-by-channel coverage and oversell/stockout warnings from your connected stores, in a daily email.</p>
+          </div>
+        </div>
+        <div class="content-row reveal">
+          <h3>Allocation decisions <span class="price-tag">US$29–79 / month</span></h3>
+          <div>
+            <p>Daily allocation calls — where to move stock, how much, with the math shown — priced by catalog size. Final tiers will be published at launch; this range is our current plan, and diagnosis recipients lock in early-access pricing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA + form -->
+  <section class="cta" id="get-diagnosis" aria-labelledby="cta-title">
+    <div class="wrap">
+      <div>
+        <h2 id="cta-title">Get your free allocation diagnosis</h2>
+        <p class="section-intro">Upload a sales CSV. Within 48 hours you'll have channel-by-channel coverage, transfer calls with the math shown, and any oversell risks we find.</p>
+        <p class="alt-channel">Prefer email? Send your CSV straight to <a href="mailto:liu_ky@hisuntech.com?subject=Allocation%20diagnosis%20request">liu_ky@hisuntech.com</a> — same result.</p>
+      </div>
+
+      <form class="form" id="diagnosis-form" novalidate>
+        <div class="field">
+          <label for="email">Work email</label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@yourbrand.com">
+        </div>
+        <div class="field">
+          <label for="store">Brand or store name <span style="font-weight:400">(optional)</span></label>
+          <input type="text" id="store" name="store" autocomplete="organization" placeholder="Acme Outdoor Co.">
+        </div>
+        <div class="field">
+          <label for="channels">Where you sell today</label>
+          <select id="channels" name="channels" required>
+            <option value="both">Shopify + Amazon</option>
+            <option value="shopify">Shopify only</option>
+            <option value="amazon">Amazon only</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="csv">Sales history (CSV)</label>
+          <label class="file-drop" id="file-drop" for="csv">
+            <input type="file" id="csv" name="csv" accept=".csv,.tsv,.txt,.xlsx" multiple>
+            <span class="drop-text">Drop CSV files here or <u>browse</u></span>
+            <span class="picked" hidden></span>
+          </label>
+          <span class="hint">Shopify order export and/or Amazon order report. 90+ days of history. Please remove buyer name/address/email columns first.</span>
+        </div>
+        <label class="consent">
+          <input type="checkbox" id="consent" name="consent" required>
+          <span>I agree to the <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>, and my file contains sales data only — no customer personal data.</span>
+        </label>
+        <button class="btn" type="submit">Send my CSV — get my diagnosis</button>
+        <p class="form-status" id="form-status" role="status"></p>
+        <p class="form-note">Human-checked. In your inbox within 48 hours.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <h2 class="section-title" id="faq-title">Questions sellers ask us</h2>
+
+      <details class="faq-item">
+        <summary>What file formats do you take?</summary>
+        <div class="answer"><p>Shopify's order export CSV and Amazon's order/FBA reports (CSV or tab-delimited) work as-is. Anything with SKU, date, quantity, and price per row is usable — from any system. If you're unsure, send what you have and we'll tell you if it's enough.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Do you need my customers' data?</summary>
+        <div class="answer"><p>No, and we'd rather not have it. Please remove buyer names, addresses, and emails before uploading. The diagnosis runs entirely on SKUs, dates, quantities, and prices. If personal data slips through anyway, we delete it.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What does it cost?</summary>
+        <div class="answer"><p>The diagnosis is free, with no obligation. The ongoing product — daily email reports with allocation calls and risk warnings, fed live from your Shopify and Amazon accounts — launches with a free diagnostics tier and a paid decisions tier, currently planned at US$29–79/month by catalog size. Diagnosis recipients get first access and early-access pricing.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Will you change anything in my stores?</summary>
+        <div class="answer"><p>Never. StockSteer is advisory and read-only by design — for the diagnosis we don't even connect to your stores, we just read the file you send. The launched product connects with read-only permissions and keeps the same rule: it recommends, you decide.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>I only sell on one channel today. Still useful?</summary>
+        <div class="answer"><p>Yes, with reduced scope: you'll get velocity, coverage, and stockout ETAs for that channel. If you're planning to add Amazon (or DTC), the diagnosis will also show what your current numbers suggest about splitting stock when you do.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What happens to my file afterwards?</summary>
+        <div class="answer"><p>It's used to produce your diagnosis and for the follow-up conversation with you, then deleted on request — one email is enough. We never sell it and never use it to train models without your explicit consent. Details in the <a href="privacy.html">Privacy Policy</a>.</p></div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="wordmark" href="/">
+      <svg width="20" height="20" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M11 4L29 4L29 14L14 14L14 19L37 19A7 7 0 0 1 44 26L44 37A7 7 0 0 1 37 44L4 44L4 34L34 34L34 29L11 29A7 7 0 0 1 4 22L4 11A7 7 0 0 1 11 4Z" fill="oklch(0.44 0.075 200)"/><rect x="34" y="4" width="10" height="10" fill="oklch(0.50 0.115 55)" transform="rotate(-6 39 9)"/></svg>
+      StockSteer
+    </a>
+    <nav aria-label="Legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="mailto:liu_ky@hisuntech.com">liu_ky@hisuntech.com</a>
+    </nav>
+    <p class="legal-note">© 2026 Vidgenix Limited. StockSteer is an independent product and is not affiliated with or endorsed by Shopify Inc. or Amazon.com, Inc. Shopify and Amazon are trademarks of their respective owners.</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

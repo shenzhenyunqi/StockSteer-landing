@@ -1,0 +1,5 @@
+# Internal docs and brand sources — versioned in git, never served.
+# og-image.png is generated from brand/og-image.svg and lives at the root.
+PRODUCT.md
+DESIGN.md
+brand/

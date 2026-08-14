@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StockSteer — brand specimen</title>
+<style>
+  :root{
+    --bg: oklch(0.976 0.006 200);
+    --ink: oklch(0.27 0.022 220);
+    --muted: oklch(0.46 0.025 215);
+    --deep: oklch(0.30 0.045 215);
+    --deep-ink: oklch(0.965 0.008 200);
+    --line: oklch(0.885 0.012 205);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New",system-ui,sans-serif}
+  .strip{padding:56px 64px;border-bottom:1px solid var(--line)}
+  .strip.dark{background:var(--deep);color:var(--deep-ink)}
+  .label{font-size:12px;color:var(--muted);margin:0 0 24px;font-family:ui-monospace,monospace}
+  .dark .label{color:oklch(0.80 0.03 200)}
+  .row{display:flex;align-items:center;gap:48px;flex-wrap:wrap}
+  .ramp{display:flex;align-items:flex-end;gap:36px}
+  .ramp figure{margin:0;text-align:center}
+  .ramp figcaption{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,monospace}
+  .navmock{display:flex;align-items:center;justify-content:space-between;background:var(--deep);color:var(--deep-ink);padding:14px 28px;border-radius:10px}
+  .navmock .wm{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:0.005em}
+  .navmock nav{display:flex;gap:22px;font-size:13.5px;opacity:.85}
+  .cardmock{background:white;border:1px solid var(--line);border-radius:16px;padding:22px 26px;max-width:420px;box-shadow:0 8px 28px oklch(0.3 0.04 215 / 0.10)}
+  .cardmock .wm{display:flex;align-items:center;gap:9px;font-weight:700;font-size:15px;color:var(--ink)}
+</style>
+</head>
+<body>
+
+<section class="strip dark">
+  <p class="label">01 · on emulsion (hero / CTA ground)</p>
+  <div class="row">
+    <img src="logo-lockup-inverse.svg" height="48" alt="">
+    <img src="logo-mark-inverse.svg" width="72" height="72" alt="">
+  </div>
+</section>
+
+<section class="strip">
+  <p class="label">02 · on toned paper</p>
+  <div class="row">
+    <img src="logo-lockup.svg" height="48" alt="">
+    <img src="logo-mark.svg" width="72" height="72" alt="">
+    <img src="logo-mark-mono.svg" width="72" height="72" alt="">
+  </div>
+</section>
+
+<section class="strip">
+  <p class="label">02b · 1:1 square lockup</p>
+  <div class="row">
+    <img src="logo-square.svg" width="160" height="160" alt="">
+    <span style="display:inline-block;background:var(--deep);padding:0;border-radius:12px"><img src="logo-square-inverse.svg" width="160" height="160" alt="" style="display:block"></span>
+    <img src="logo-square.svg" width="96" height="96" alt="">
+    <img src="logo-square.svg" width="64" height="64" alt="">
+  </div>
+</section>
+
+<section class="strip">
+  <p class="label">03 · mark size ramp</p>
+  <div class="ramp">
+    <figure><img src="logo-mark.svg" width="16" height="16" alt=""><figcaption>16</figcaption></figure>
+    <figure><img src="logo-mark.svg" width="22" height="22" alt=""><figcaption>22</figcaption></figure>
+    <figure><img src="logo-mark.svg" width="32" height="32" alt=""><figcaption>32</figcaption></figure>
+    <figure><img src="logo-mark.svg" width="48" height="48" alt=""><figcaption>48</figcaption></figure>
+    <figure><img src="logo-mark.svg" width="96" height="96" alt=""><figcaption>96</figcaption></figure>
+    <figure><img src="logo-app.svg" width="16" height="16" alt=""><figcaption>app 16</figcaption></figure>
+    <figure><img src="logo-app.svg" width="32" height="32" alt=""><figcaption>app 32</figcaption></figure>
+    <figure><img src="logo-app.svg" width="64" height="64" alt=""><figcaption>app 64</figcaption></figure>
+    <figure><img src="logo-app.svg" width="128" height="128" alt=""><figcaption>app 128</figcaption></figure>
+  </div>
+</section>
+
+<section class="strip">
+  <p class="label">04 · in context — nav bar & document header</p>
+  <div style="display:grid;gap:28px">
+    <div class="navmock">
+      <span class="wm"><img src="logo-mark-inverse.svg" width="24" height="24" alt="">StockSteer</span>
+      <nav><span>The diagnosis</span><span>How it works</span><span>Pricing</span><span>FAQ</span></nav>
+    </div>
+    <div class="cardmock">
+      <span class="wm"><img src="logo-mark.svg" width="20" height="20" alt="">StockSteer · Allocation diagnosis</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
