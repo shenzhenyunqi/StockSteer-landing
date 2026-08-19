@@ -1,10 +1,11 @@
 // StockSteer landing — form + motion. No dependencies.
 
-// Set this to your form backend (e.g. Formspree/Basin endpoint that accepts
-// multipart/form-data POST). Until it's set, submissions fall back to email.
-const FORM_ENDPOINT = "";
+// Our own Vercel function (api/diagnosis.js) — emails the submission, CSVs
+// attached, to the team inbox. If it errors (e.g. RESEND_API_KEY not set on
+// the Vercel project, or files >4MB), the catch below falls back to email.
+const FORM_ENDPOINT = "/api/diagnosis";
 
-const CONTACT_EMAIL = "liu_ky@hisuntech.com";
+const CONTACT_EMAIL = "hello@stocksteer-support.maxvideohub.com";
 
 // Entrance animations start from opacity 0, so only arm them when the page
 // loads visible — hidden tabs and headless captures render the static state.
@@ -108,6 +109,7 @@ if (form) {
     }
 
     const btn = form.querySelector("button[type=submit]");
+    const btnLabel = btn.innerHTML;
     btn.disabled = true;
     btn.textContent = "Sending…";
     try {
@@ -126,7 +128,7 @@ if (form) {
       );
     } finally {
       btn.disabled = false;
-      btn.textContent = "Send my CSV — get my diagnosis";
+      btn.innerHTML = btnLabel;
     }
   });
 }

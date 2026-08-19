@@ -19,12 +19,12 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg width=%2264%22 height=%2264%22 viewBox=%220 0 64 64%22 fill=%22none%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%230C333C%22/%3E%3Cg transform=%22translate%288 8%29%22%3E%3Cpath d=%22M11 4L29 4L29 14L14 14L14 19L37 19A7 7 0 0 1 44 26L44 37A7 7 0 0 1 37 44L4 44L4 34L34 34L34 29L11 29A7 7 0 0 1 4 22L4 11A7 7 0 0 1 11 4Z%22 fill=%22%23F3F8F9%22/%3E%3Crect x=%2234%22 y=%224%22 width=%2210%22 height=%2210%22 fill=%22%23D08440%22 transform=%22rotate%28-6 39 9%29%22/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header class="nav">
+<header class="nav nav-home">
   <div class="wrap">
     <a class="wordmark" href="/">
       <svg width="22" height="22" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M11 4L29 4L29 14L14 14L14 19L37 19A7 7 0 0 1 44 26L44 37A7 7 0 0 1 37 44L4 44L4 34L34 34L34 29L11 29A7 7 0 0 1 4 22L4 11A7 7 0 0 1 11 4Z" fill="oklch(0.44 0.075 200)"/><rect x="34" y="4" width="10" height="10" fill="oklch(0.50 0.115 55)" transform="rotate(-6 39 9)"/></svg>
@@ -35,8 +35,8 @@
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
-      <a class="btn" href="#get-diagnosis"><span class="cta-long">Get your free diagnosis</span><span class="cta-short">Free diagnosis</span></a>
     </nav>
+    <a class="btn nav-cta" href="#get-diagnosis"><span class="cta-long">Get your free diagnosis</span><span class="cta-short">Free diagnosis</span></a>
   </div>
 </header>
 
@@ -49,7 +49,7 @@
         <h1 id="hero-title">Your stock sells on two channels. Your planning tool sees one.</h1>
         <p class="lede">StockSteer reads Shopify and Amazon <strong>together</strong> and answers the question single-channel tools can't: <strong>which channel should get this stock, and how many units</strong> — with the math shown, every time.</p>
         <div class="hero-cta">
-          <a class="btn btn-on-deep" href="#get-diagnosis">Get a free allocation diagnosis</a>
+          <a class="btn" href="#get-diagnosis">Get a free allocation diagnosis</a>
         </div>
         <p class="hero-trust">One sales CSV in → diagnosis in your inbox within 48 hours.<br>No account. No OAuth. Read-only — we never touch your listings.</p>
       </div>
@@ -102,6 +102,7 @@
   <!-- What's in the diagnosis -->
   <section id="diagnosis" aria-labelledby="diagnosis-title">
     <div class="wrap">
+      <p class="eyebrow reveal">The deliverable</p>
       <h2 class="section-title reveal" id="diagnosis-title">What the diagnosis tells you</h2>
       <p class="section-intro reveal">Not a dashboard. A short, human-checked report with the handful of calls that actually move margin this month.</p>
 
@@ -123,7 +124,7 @@
           <h3>Oversell and stockout warnings</h3>
           <div>
             <p>Where Shopify and Amazon FBM are quietly selling the same pool of units, and the projected date each channel goes dark if nothing changes.</p>
-            <span class="example">TENT-2P&nbsp;&nbsp;shared pool 88u&nbsp;·&nbsp;oversell ETA 8 days</span>
+            <span class="example example-risk">TENT-2P&nbsp;&nbsp;shared pool 88u&nbsp;·&nbsp;oversell ETA 8 days</span>
           </div>
         </div>
         <div class="content-row reveal">
@@ -137,8 +138,9 @@
   </section>
 
   <!-- How it works -->
-  <section id="how" aria-labelledby="how-title">
+  <section id="how" class="band-cream" aria-labelledby="how-title">
     <div class="wrap">
+      <p class="eyebrow reveal">Process</p>
       <h2 class="section-title reveal" id="how-title">How it works</h2>
 
       <div class="steps">
@@ -171,6 +173,7 @@
   <!-- The argument -->
   <section class="argument" aria-labelledby="argument-title">
     <div class="wrap">
+      <p class="eyebrow reveal">The problem</p>
       <h2 class="section-title reveal" id="argument-title">Why a one-channel view keeps costing you</h2>
       <p class="reveal">Inventory tools built for Shopify treat Amazon as something to sync in later, if at all. But the same unit can't be in two places: every carton you keep at your 3PL is a carton FBA can't sell, and every unit you send to Amazon stops covering your DTC orders.</p>
       <p class="reveal">That trade-off has a price on both sides — different fees, different velocity, different margin per unit. Single-channel tools can't see it, so the decision gets made by habit: whoever shouted about stockouts last.</p>
@@ -205,24 +208,25 @@
   <!-- Pricing -->
   <section id="pricing" aria-labelledby="pricing-title">
     <div class="wrap">
+      <p class="eyebrow reveal">Pricing</p>
       <h2 class="section-title reveal" id="pricing-title">What it costs</h2>
       <p class="section-intro reveal">The rule is simple: reading your numbers is free, acting on them is paid.</p>
 
       <div class="contents-list">
         <div class="content-row reveal">
-          <h3>Allocation diagnosis <span class="price-tag">Free</span></h3>
+          <h3>Allocation diagnosis <span class="price-tag price-free">Free</span></h3>
           <div>
             <p>The one-off report described above. No card, no account, no obligation — during our pre-launch period this is how we learn and how you evaluate us.</p>
           </div>
         </div>
         <div class="content-row reveal">
-          <h3>Diagnostics &amp; alerts <span class="price-tag">Free at launch</span></h3>
+          <h3>Diagnostics &amp; alerts <span class="price-tag price-launch">Free at launch</span></h3>
           <div>
             <p>When the product launches: channel-by-channel coverage and oversell/stockout warnings from your connected stores, in a daily email.</p>
           </div>
         </div>
         <div class="content-row reveal">
-          <h3>Allocation decisions <span class="price-tag">US$29–79 / month</span></h3>
+          <h3>Allocation decisions <span class="price-tag price-paid">US$29–79 / month</span></h3>
           <div>
             <p>Daily allocation calls — where to move stock, how much, with the math shown — priced by catalog size. Final tiers will be published at launch; this range is our current plan, and diagnosis recipients lock in early-access pricing.</p>
           </div>
@@ -237,7 +241,7 @@
       <div>
         <h2 id="cta-title">Get your free allocation diagnosis</h2>
         <p class="section-intro">Upload a sales CSV. Within 48 hours you'll have channel-by-channel coverage, transfer calls with the math shown, and any oversell risks we find.</p>
-        <p class="alt-channel">Prefer email? Send your CSV straight to <a href="mailto:liu_ky@hisuntech.com?subject=Allocation%20diagnosis%20request">liu_ky@hisuntech.com</a> — same result.</p>
+        <p class="alt-channel">Prefer email? Send your CSV straight to <a href="mailto:hello@stocksteer-support.maxvideohub.com?subject=Allocation%20diagnosis%20request">hello@stocksteer-support.maxvideohub.com</a> — same result.</p>
       </div>
 
       <form class="form" id="diagnosis-form" novalidate>
@@ -270,7 +274,7 @@
           <input type="checkbox" id="consent" name="consent" required>
           <span>I agree to the <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>, and my file contains sales data only — no customer personal data.</span>
         </label>
-        <button class="btn" type="submit">Send my CSV — get my diagnosis</button>
+        <button class="btn" type="submit"><span class="cta-long">Send my CSV — get my diagnosis</span><span class="cta-short">Send my CSV</span></button>
         <p class="form-status" id="form-status" role="status"></p>
         <p class="form-note">Human-checked. In your inbox within 48 hours.</p>
       </form>
@@ -313,16 +317,22 @@
 
 <footer>
   <div class="wrap">
-    <a class="wordmark" href="/">
-      <svg width="20" height="20" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M11 4L29 4L29 14L14 14L14 19L37 19A7 7 0 0 1 44 26L44 37A7 7 0 0 1 37 44L4 44L4 34L34 34L34 29L11 29A7 7 0 0 1 4 22L4 11A7 7 0 0 1 11 4Z" fill="oklch(0.44 0.075 200)"/><rect x="34" y="4" width="10" height="10" fill="oklch(0.50 0.115 55)" transform="rotate(-6 39 9)"/></svg>
-      StockSteer
-    </a>
-    <nav aria-label="Legal">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="mailto:liu_ky@hisuntech.com">liu_ky@hisuntech.com</a>
-    </nav>
-    <p class="legal-note">© 2026 Vidgenix Limited. StockSteer is an independent product and is not affiliated with or endorsed by Shopify Inc. or Amazon.com, Inc. Shopify and Amazon are trademarks of their respective owners.</p>
+    <div class="foot-statement">
+      <p class="foot-line">See both channels. Steer your stock where it earns more.</p>
+      <a class="btn" href="#get-diagnosis">Get a free allocation diagnosis</a>
+    </div>
+    <div class="foot-meta">
+      <a class="wordmark" href="/">
+        <svg width="20" height="20" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M11 4L29 4L29 14L14 14L14 19L37 19A7 7 0 0 1 44 26L44 37A7 7 0 0 1 37 44L4 44L4 34L34 34L34 29L11 29A7 7 0 0 1 4 22L4 11A7 7 0 0 1 11 4Z" fill="oklch(0.44 0.075 200)"/><rect x="34" y="4" width="10" height="10" fill="oklch(0.50 0.115 55)" transform="rotate(-6 39 9)"/></svg>
+        StockSteer
+      </a>
+      <nav aria-label="Legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="mailto:hello@stocksteer-support.maxvideohub.com">hello@stocksteer-support.maxvideohub.com</a>
+      </nav>
+      <p class="legal-note">© 2026 Vidgenix Limited. StockSteer is an independent product and is not affiliated with or endorsed by Shopify Inc. or Amazon.com, Inc. Shopify and Amazon are trademarks of their respective owners.</p>
+    </div>
   </div>
 </footer>
 

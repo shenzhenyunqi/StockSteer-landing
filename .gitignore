@@ -1,5 +1,6 @@
 # Internal docs — kept local, not published to the public repo.
 PRODUCT.md
 DESIGN.md
+.hallmark/
 
 .DS_Store

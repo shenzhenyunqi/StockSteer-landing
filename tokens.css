@@ -1,0 +1,84 @@
+/* Hallmark · tokens — StockSteer landing
+ * theme: studied-DNA (source: https://exa.ai/, public reference)
+ * paper white + warm cream · warm charcoal dark panel · brand teal accent (small footprint)
+ * amber = risk semantics only · black CTA buttons
+ * display: Newsreader (≈ ABC Arizona) · body: Geist (≈ ABC Diatype) · mono: Geist Mono
+ */
+
+:root {
+  /* Surfaces */
+  --paper: oklch(1 0 0);                     /* white — hero, main sections */
+  --cream: oklch(0.982 0.004 85);            /* ≈ #faf9f7 — alternating sections */
+  --cream-2: oklch(0.955 0.007 80);          /* ≈ #f0ece8 — neutral chips */
+  --dark: oklch(0.27 0.045 215);             /* deep teal emulsion panel — brand dark */
+
+  /* Ink */
+  --ink: oklch(0.235 0.012 260);             /* near-black, slight cool cast */
+  --muted: oklch(0.435 0.018 80);            /* greige — secondary text on light */
+  --dark-ink: oklch(0.965 0.008 200);        /* text on the teal panel */
+  --dark-muted: oklch(0.79 0.03 200);        /* secondary text on the teal panel */
+
+  /* Accent — brand teal from the logo */
+  --teal: oklch(0.44 0.09 200);
+  --teal-hover: oklch(0.36 0.08 203);
+  --teal-on-dark: oklch(0.8 0.09 195);       /* kicker / links on the teal panel */
+  --amber: oklch(0.5 0.115 55);              /* risk semantics only */
+  --amber-soft: oklch(0.955 0.02 60);        /* error status background */
+  --amber-deep: oklch(0.43 0.1 55);          /* error status text */
+
+  /* Chip pairs — pastel ground + deep ink, exa-style data accents */
+  --chip-teal-bg: oklch(0.936 0.028 200);
+  --chip-teal-ink: oklch(0.35 0.075 205);
+  --chip-green-bg: oklch(0.945 0.045 145);
+  --chip-green-ink: oklch(0.38 0.09 150);
+  --chip-sky-bg: oklch(0.936 0.032 245);
+  --chip-sky-ink: oklch(0.38 0.09 252);
+  --chip-amber-bg: oklch(0.95 0.038 75);
+  --chip-amber-ink: oklch(0.42 0.095 60);
+
+  /* Buttons — deep brand teal */
+  --btn: oklch(0.33 0.065 205);
+  --btn-hover: oklch(0.27 0.06 208);
+  --btn-ink: oklch(1 0 0);
+
+  /* Rules */
+  --line: oklch(0.905 0.004 90);             /* warm hairline */
+  --line-dark: oklch(0.36 0.04 212);         /* hairline on the teal panel */
+  --line-dashed: oklch(0.8 0.006 90);        /* file-drop dashed border */
+
+  /* Washes & shadows */
+  --tint-hero: oklch(0.965 0.018 200 / 0.75);/* soft teal wash at the top of the hero */
+  --shadow-1: 0 1px 2px oklch(0.2 0.01 100 / 0.05);
+  --shadow-2: 0 12px 32px oklch(0.2 0.01 100 / 0.07);
+
+  /* Type */
+  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-body: "Geist", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", monospace;
+
+  --text-body: 1.0625rem;
+  --text-sm: 0.9375rem;
+  --text-xs: 0.8125rem;
+  --text-lede: 1.1875rem;
+  --text-h3: 1.125rem;
+  --text-h2: clamp(1.85rem, 3.4vw, 2.6rem);
+  --text-kicker: clamp(1.6rem, 3vw, 2.3rem);
+  --text-display: clamp(2.5rem, 5.4vw, 4rem);
+  --track-display: -0.03em;
+  --track-eyebrow: 0.12em;
+
+  /* Space */
+  --space-section: clamp(4.5rem, 10vw, 8rem);
+
+  /* Shape */
+  --radius: 6px;                             /* buttons, inputs */
+  --radius-lg: 10px;                         /* cards */
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 160ms;
+  --dur-reveal: 600ms;
+
+  /* Stack */
+  --z-nav: 10;
+}
