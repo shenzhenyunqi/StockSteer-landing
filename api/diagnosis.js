@@ -33,6 +33,61 @@ function toBase64(buf) {
   return btoa(bin);
 }
 
+const escapeHtml = (s) =>
+  String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+const CHANNEL_LABELS = { both: "Shopify + Amazon", shopify: "Shopify only", amazon: "Amazon only" };
+
+// Landing-palette hex equivalents of tokens.css (email clients can't do oklch):
+// cream #faf9f6 · card #ffffff · hairline #e0dfdd · ink #1b1e24 · muted #565046
+// teal #006166 · teal chip #d5f0f1/#00454d · neutral chip #f3f0eb
+const FONT_BODY = "'Geist','Helvetica Neue',Arial,sans-serif";
+const FONT_DISPLAY = "'Newsreader',Georgia,'Times New Roman',serif";
+const FONT_MONO = "'Geist Mono',ui-monospace,'SF Mono',Menlo,monospace";
+
+export function diagnosisHtml({ email, store, channels, filenames }) {
+  const row = (label, value) =>
+    `<tr>` +
+    `<td style="padding:12px 24px 12px 0;border-top:1px solid #e0dfdd;font:500 11px/1.5 ${FONT_BODY};letter-spacing:0.12em;text-transform:uppercase;color:#565046;vertical-align:top;white-space:nowrap;">${label}</td>` +
+    `<td style="padding:12px 0;border-top:1px solid #e0dfdd;font:400 15px/1.5 ${FONT_BODY};color:#1b1e24;vertical-align:top;width:100%;">${value}</td>` +
+    `</tr>`;
+
+  const fileChips = filenames.length
+    ? filenames
+        .map(
+          (name) =>
+            `<span style="display:inline-block;margin:0 6px 4px 0;padding:2px 10px;border-radius:6px;background:#f3f0eb;font:400 12.5px/1.7 ${FONT_MONO};color:#1b1e24;">${escapeHtml(name)}</span>`
+        )
+        .join("")
+    : `<span style="color:#565046;">none attached</span>`;
+
+  const rows =
+    row("Work email", `<a href="mailto:${escapeHtml(email)}" style="color:#006166;">${escapeHtml(email)}</a>`) +
+    (store ? row("Store", escapeHtml(store)) : "") +
+    row(
+      "Channels",
+      `<span style="display:inline-block;padding:2px 10px;border-radius:6px;background:#d5f0f1;font:500 13px/1.7 ${FONT_BODY};color:#00454d;">${escapeHtml(CHANNEL_LABELS[channels] || channels || "—")}</span>`
+    ) +
+    row("Files", fileChips);
+
+  return (
+    `<!doctype html><html><body style="margin:0;padding:32px 16px;background:#faf9f6;">` +
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;"><tr><td align="center">` +
+    `<table role="presentation" width="560" cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:560px;max-width:100%;">` +
+    `<tr><td style="padding:0 4px 14px;font:600 15px/1 ${FONT_BODY};letter-spacing:-0.01em;color:#1b1e24;">` +
+    `<span style="display:inline-block;width:10px;height:10px;border-radius:3px;background:#006166;"></span>&nbsp;&nbsp;StockSteer</td></tr>` +
+    `<tr><td style="background:#ffffff;border:1px solid #e0dfdd;border-radius:10px;padding:28px 32px;">` +
+    `<p style="margin:0 0 10px;font:500 12px/1.5 ${FONT_BODY};letter-spacing:0.12em;text-transform:uppercase;color:#006166;">Allocation diagnosis</p>` +
+    `<h1 style="margin:0 0 6px;font:400 24px/1.25 ${FONT_DISPLAY};letter-spacing:-0.02em;color:#1b1e24;">New diagnosis request</h1>` +
+    `<p style="margin:0 0 20px;font:400 14px/1.5 ${FONT_BODY};color:#565046;">Submitted through the landing form.</p>` +
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">${rows}</table>` +
+    `<p style="margin:20px 0 0;padding-top:14px;border-top:1px solid #e0dfdd;font:400 13px/1.5 ${FONT_BODY};color:#565046;">Reply to this email to reach the merchant directly.</p>` +
+    `</td></tr>` +
+    `<tr><td style="padding:14px 4px 0;font:400 12px/1.5 ${FONT_BODY};color:#565046;">StockSteer &middot; <a href="https://stocksteer.maxvideohub.com" style="color:#006166;">stocksteer.maxvideohub.com</a></td></tr>` +
+    `</table></td></tr></table></body></html>`
+  );
+}
+
 export default async function handler(request) {
   if (request.method !== "POST") return json(405, { error: "Method not allowed" });
 
@@ -73,6 +128,7 @@ export default async function handler(request) {
       to: [process.env.DIAGNOSIS_INBOX || "hello@stocksteer-support.maxvideohub.com"],
       reply_to: email,
       subject: "Allocation diagnosis request" + (store ? " — " + store : ""),
+      html: diagnosisHtml({ email, store, channels, filenames: attachments.map((a) => a.filename) }),
       text:
         `New diagnosis request from the landing form.\n\n` +
         `Work email: ${email}\n` +

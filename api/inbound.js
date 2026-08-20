@@ -102,6 +102,20 @@ export default async function handler(request) {
 
   const sender = email.headers?.from || email.from;
   const note = `Forwarded from ${wanted[0]} — original sender: ${sender}`;
+  const escapeHtml = (s) =>
+    String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  // Landing-palette banner (cream #faf9f6, hairline #e0dfdd, muted #565046, ink #1b1e24)
+  const noteHtml =
+    `<div style="margin:0 0 16px;padding:10px 14px;background:#faf9f6;border:1px solid #e0dfdd;border-radius:6px;` +
+    `font:400 12.5px/1.5 'Geist','Helvetica Neue',Arial,sans-serif;color:#565046;">` +
+    `Forwarded from ${escapeHtml(wanted[0])} &middot; original sender: ` +
+    `<span style="color:#1b1e24;">${escapeHtml(sender)}</span></div>`;
+  // Insert after <body> when the original is a full document — content before
+  // <!doctype> trips quirks-mode rendering in some clients.
+  const withNote = (html) => {
+    const body = html.match(/<body[^>]*>/i);
+    return body ? html.replace(body[0], body[0] + noteHtml) : noteHtml + html;
+  };
   const subject = (email.subject || "(no subject)").startsWith("Fwd:")
     ? email.subject
     : `Fwd: ${email.subject || "(no subject)"}`;
@@ -114,7 +128,7 @@ export default async function handler(request) {
       to: [forwardTo],
       reply_to: email.from,
       subject,
-      html: email.html ? `<p style="color:#666;font-size:12px">${note}</p>${email.html}` : undefined,
+      html: email.html ? withNote(email.html) : undefined,
       text: `${note}\n\n${email.text || ""}`,
       attachments: attachments.length ? attachments : undefined,
     }),
